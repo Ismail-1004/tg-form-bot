@@ -17,11 +17,11 @@ class FormController {
     // Отправляем сообщение в Telegram
     this.bot.sendMessage(this.TELEGRAM_CHAT_ID, text)
       .then(() => {
-        res.send('Сообщение успешно отправлено в Telegram');
+        res.send({ messag: 'Данные успешно сохранены, в ближайешее время мы выйдем на связь!', success: true });
       })
       .catch((error) => {
         console.error('Ошибка отправки сообщения в Telegram:', error.message);
-        res.status(500).send('Ошибка отправки сообщения в Telegram');
+        res.status(500).send({ message: 'Ошибка отправки сообщения в Telegram', success: false });
       });
   }
 }
