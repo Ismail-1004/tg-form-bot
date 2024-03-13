@@ -12,7 +12,7 @@ class FormController {
   async send(req, res) {
     const { name, phone, course } = req.body
 
-    const text = `Новое сообщение с формы:\nИмя: ${name}\nНомер телефона: ${phone}\n Курс: ${course}`;
+    const text = `Новое сообщение с формы:\nИмя: ${name}\nНомер телефона: ${phone}\nКурс: ${course}`;
 
     // Отправляем сообщение в Telegram
     this.bot.sendMessage(this.TELEGRAM_CHAT_ID, text)
